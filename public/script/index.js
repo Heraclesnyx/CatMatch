@@ -41,5 +41,5 @@ function scoreCats(cats) {
 			root[i].appendChild(images[i]);			
 		}
 	});
-
 }
+

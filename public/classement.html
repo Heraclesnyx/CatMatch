@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="/styles/grid.css">
 	<link rel="stylesheet" type="text/css" href="/styles/cat.css">
-	
 </head>
-<body>
 
+<body>
+<div class="color"></div>
+<div class="header">
+	<img src="../images/logo.png" class="img-center">
+	<h1>Classement des chats</h1>
+</div>
+
+<div class="container">
+	<div id="classment-list">
+		<div id="list_card" class="row"></div>
+			
+	</div>
+</div>
+
+
+	<div class="text-center">
+		<a href="index.html" class="button"> Retour à la page d'accueil</a>
+	</div>
+</div>
+
+
+
+
+<script type="text/javascript" src="/script/index.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        getCats(5).then(cats => printCats(cats, buildCatCard));
+    }
+</script>
 </body>
 </html>
