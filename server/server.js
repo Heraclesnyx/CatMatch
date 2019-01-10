@@ -40,5 +40,25 @@ MongoClient.connect(url, {useNewUrlParser: true}, (err, client) => {
     app.use(express.static("public"));
     app.use(bodyParser());
 
+    //récupére tous les chats
 
+    app.get('/cats', async (req, res) => {
+    	try {
+    		const cats =  await req.mongoInstance.collection("cats").find().limit(parseInt(req.query.nb)).sort( { score: -1 }).toArray();
+    		return res.status(200).send(cats);
+    	} catch (err) {
+    		return res.status(404).send(err);
+    	}
+    });
+
+    app.post('/increment', async (req, res) => {
+    	try {
+    		const cat =  await req.mongoInstance.collection("cats").findOneAndUpdate({ url: req.body.url }, { $inc: { score: 1 } });
+    		return res.status(200).send(cat);
+    	} catch (err) {
+    		return res.status(503).send(err);
+    	}
+    });
+
+    app.listen(3000, () => console.log('App running on port 3000'));
 });
