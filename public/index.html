@@ -9,5 +9,34 @@
 </head>
 <body>
 
+	<div class="color"></div>
+	<div class="header">
+		<img src="../images/logo.png" class="img-center">
+	</div>
+	<div id="container">
+		
+		<div class="leftBloc bloc">
+			<div class="root"></div>
+		</div>
+		<div class="rightBloc bloc">
+			<div class="root"></div>
+		</div>
+
+		<div class="text-center">
+			<a href="classement.html" class="button"> Retour à la page d'accueil</a>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="/script/index.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/script/images.js"></script>
+
+	<script type="text/javascript">
+		window.onload = function () {
+			getCats().then(scoreCats);
+		}
+	</script>
+
 </body>
 </html>
