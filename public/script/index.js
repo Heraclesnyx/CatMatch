@@ -89,3 +89,10 @@ function buildCatCard(cat, compteur) {
 	return col;
 
 }
+
+function getCats(limit) {
+	return new Promise((resolve, reject) => fetch(`/cats?nb=${limit ? limit : 0 }`) //limite pour classement en ternaire
+		.then(res => res.json())
+		.then(cats => resolve(cats))
+		.catch(console.error))
+}
