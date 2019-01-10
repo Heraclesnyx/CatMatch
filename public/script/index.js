@@ -43,3 +43,49 @@ function scoreCats(cats) {
 	});
 }
 
+//afficher éléments
+function printCats(cats) {
+
+	let i = 0;
+	cats.forEach(cat => {
+		let compteur = i === 0 ? 'col-md-8 col-md-offset-2 col-xs-12' : 'col-md-3 col-xs-12';
+		i++;
+		console.log(buildCatCard(cat, compteur));
+		$(buildCatCard(cat, compteur)).appendTo("#list_card");
+	});
+}
+
+//créer l'élément seul
+function buildCatCard(cat, compteur) {
+	
+
+	let lister = document.createElement("div");
+	lister.className = "card";
+
+	let header = document.createElement("div");
+	header.className = "card__header text-center";
+
+	let bodyName = document.createElement("div");
+	bodyName.className = "card__body text-center";
+
+	let col = document.createElement("div");
+	col.className = compteur;
+
+
+	col.appendChild(lister);
+	lister.appendChild(header);
+	lister.appendChild(bodyName);
+
+
+	let img = document.createElement("img");
+	img.src = cat.url;
+	header.style.backgroundImage = `url(${cat.url})`;
+
+	let text = document.createTextNode("Le nombre de vote pour ce chaton est de : " + cat.score);
+
+	bodyName.appendChild(text);
+	header.appendChild(img);
+
+	return col;
+
+}
