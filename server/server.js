@@ -3,8 +3,7 @@ const express = require("express");
 const { MongoClient } = require("mongodb"); //destructuring
 const axios = require("axios");
 const bodyParser = require('body-parser');
-const url = 'mongodb://anthony:rpkgetbg@ds155294.mlab.com:55294/catmatch';
-// 'mongodb://localhost:27017';
+const url = 'mongodb://localhost:27017';
 const dbName = 'catmatch';
 
 
