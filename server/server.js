@@ -3,7 +3,7 @@ const express = require("express");
 const { MongoClient } = require("mongodb"); //destructuring
 const axios = require("axios");
 const bodyParser = require('body-parser');
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb://anthony:root01@ds155164.mlab.com:55164/heroku_3hr0r81r';
 const dbName = 'catmatch';
 const port = process.env.PORT || 3000;
 
