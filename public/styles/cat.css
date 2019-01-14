@@ -46,7 +46,6 @@ html, body {
     max-width: 1024px;
     display: block;
     margin: 10px auto;
-    position: relative;
 }
 
 .bloc {
@@ -63,8 +62,6 @@ html, body {
 
 .text-center {
     text-align: center;
-    position: relative;
-    bottom: 3rem;
 }
 
 .root {
