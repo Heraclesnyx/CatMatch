@@ -12,9 +12,7 @@ MongoClient.connect(url, {useNewUrlParser: true}, (err, client) => {
     const app = express();
 
     if (err) {
-        app.use((req, res) => {
-            res.status(500).send('An error occurred');
-        });
+        app.use((req, res) => res.status(500).send('An error occurred'));
     }
 
     const Api = axios.get("https://latelier.co/data/cats.json")
@@ -28,9 +26,7 @@ MongoClient.connect(url, {useNewUrlParser: true}, (err, client) => {
     		score:0
     	})))
     	
-    }).catch(error => {
-    	console.log(error);
-    });
+    }).catch(console.log);
 
 	app.use((req, res, next) => {
 		req.mongoInstance = client.db(dbName);
