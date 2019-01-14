@@ -5,6 +5,7 @@ const axios = require("axios");
 const bodyParser = require('body-parser');
 const url = 'mongodb://localhost:27017';
 const dbName = 'catmatch';
+const port = process.env.PORT || 3000;
 
 
 // Connect using the connection string
@@ -56,5 +57,5 @@ MongoClient.connect(url, {useNewUrlParser: true}, (err, client) => {
     	}
     });
 
-    app.listen(3000, () => console.log('App running on port 3000'));
+    app.listen(port, () => console.log(`App running on port ${port}`));
 });
