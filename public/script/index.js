@@ -10,6 +10,7 @@ function scoreCats(cats) {
 	}
 
 	const catsCollection = [cats[first], cats[second]];
+	console.log(catsCollection);
 	const promises = [];
 
 	//Event clic sur nos images généré aléatoirement
